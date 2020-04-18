@@ -1,0 +1,356 @@
+{
+    "stateData": [
+        {
+            "state": "South Carolina",
+            "currentCases": "3211",
+            "deaths": "80"
+        },
+        {
+            "state": "Louisiana",
+            "currentCases": "20014",
+            "deaths": "806"
+        },
+        {
+            "state": "Virginia",
+            "currentCases": "5077",
+            "deaths": "130"
+        },
+        {
+            "state": "Idaho",
+            "currentCases": "1396",
+            "deaths": "25"
+        },
+        {
+            "state": "Iowa",
+            "currentCases": "1510",
+            "deaths": "34"
+        },
+        {
+            "state": "Kentucky",
+            "currentCases": "1693",
+            "deaths": "90"
+        },
+        {
+            "state": "Missouri",
+            "currentCases": "4108",
+            "deaths": "116"
+        },
+        {
+            "state": "Oklahoma",
+            "currentCases": "1868",
+            "deaths": "94"
+        },
+        {
+            "state": "Colorado",
+            "currentCases": "6513",
+            "deaths": "250"
+        },
+        {
+            "state": "Illinois",
+            "currentCases": "19180",
+            "deaths": "677"
+        },
+        {
+            "state": "Indiana",
+            "currentCases": "7435",
+            "deaths": "330"
+        },
+        {
+            "state": "Mississippi",
+            "currentCases": "2642",
+            "deaths": "93"
+        },
+        {
+            "state": "Nebraska",
+            "currentCases": "699",
+            "deaths": "17"
+        },
+        {
+            "state": "Ohio",
+            "currentCases": "6250",
+            "deaths": "247"
+        },
+        {
+            "state": "Pennsylvania",
+            "currentCases": "21719",
+            "deaths": "503"
+        },
+        {
+            "state": "Washington",
+            "currentCases": "10434",
+            "deaths": "495"
+        },
+        {
+            "state": "Wisconsin",
+            "currentCases": "3213",
+            "deaths": "137"
+        },
+        {
+            "state": "Vermont",
+            "currentCases": "711",
+            "deaths": "25"
+        },
+        {
+            "state": "Florida",
+            "currentCases": "18494",
+            "deaths": "438"
+        },
+        {
+            "state": "North Carolina",
+            "currentCases": "4354",
+            "deaths": "89"
+        },
+        {
+            "state": "California",
+            "currentCases": "21706",
+            "deaths": "605"
+        },
+        {
+            "state": "New York",
+            "currentCases": "181026",
+            "deaths": "8627"
+        },
+        {
+            "state": "Wyoming",
+            "currentCases": "261",
+            "deaths": "0"
+        },
+        {
+            "state": "Michigan",
+            "currentCases": "23605",
+            "deaths": "1384"
+        },
+        {
+            "state": "Maryland",
+            "currentCases": "7694",
+            "deaths": "206"
+        },
+        {
+            "state": "Alaska",
+            "currentCases": "257",
+            "deaths": "8"
+        },
+        {
+            "state": "Kansas",
+            "currentCases": "1275",
+            "deaths": "55"
+        },
+        {
+            "state": "Tennessee",
+            "currentCases": "5132",
+            "deaths": "106"
+        },
+        {
+            "state": "Texas",
+            "currentCases": "13023",
+            "deaths": "266"
+        },
+        {
+            "state": "Maine",
+            "currentCases": "616",
+            "deaths": "19"
+        },
+        {
+            "state": "Minnesota",
+            "currentCases": "1427",
+            "deaths": "64"
+        },
+        {
+            "state": "Arizona",
+            "currentCases": "3393",
+            "deaths": "108"
+        },
+        {
+            "state": "Arkansas",
+            "currentCases": "1228",
+            "deaths": "25"
+        },
+        {
+            "state": "New Jersey",
+            "currentCases": "58151",
+            "deaths": "2183"
+        },
+        {
+            "state": "South Dakota",
+            "currentCases": "626",
+            "deaths": "6"
+        },
+        {
+            "state": "Alabama",
+            "currentCases": "3217",
+            "deaths": "92"
+        },
+        {
+            "state": "West Virginia",
+            "currentCases": "577",
+            "deaths": "5"
+        },
+        {
+            "state": "North Dakota",
+            "currentCases": "293",
+            "deaths": "7"
+        },
+        {
+            "state": "Massachusetts",
+            "currentCases": "22860",
+            "deaths": "686"
+        },
+        {
+            "state": "Montana",
+            "currentCases": "377",
+            "deaths": "6"
+        },
+        {
+            "state": "New Hampshire",
+            "currentCases": "885",
+            "deaths": "22"
+        },
+        {
+            "state": "Oregon",
+            "currentCases": "1371",
+            "deaths": "48"
+        },
+        {
+            "state": "New Mexico",
+            "currentCases": "1091",
+            "deaths": "19"
+        },
+        {
+            "state": "Utah",
+            "currentCases": "2207",
+            "deaths": "18"
+        },
+        {
+            "state": "Rhode Island",
+            "currentCases": "2349",
+            "deaths": "56"
+        },
+        {
+            "state": "Nevada",
+            "currentCases": "2702",
+            "deaths": "102"
+        },
+        {
+            "state": "District of Columbia",
+            "currentCases": "1778",
+            "deaths": "47"
+        },
+        {
+            "state": "Connecticut",
+            "currentCases": "11510",
+            "deaths": "494"
+        },
+        {
+            "state": "Hawaii",
+            "currentCases": "465",
+            "deaths": "8"
+        },
+        {
+            "state": "Delaware",
+            "currentCases": "1479",
+            "deaths": "33"
+        },
+        {
+            "state": "Northern Mariana Islands",
+            "currentCases": "11",
+            "deaths": "2"
+        },
+        {
+            "state": "Grand Princess",
+            "currentCases": "116",
+            "deaths": "3"
+        },
+        {
+            "state": "Guam",
+            "currentCases": "133",
+            "deaths": "5"
+        },
+        {
+            "state": "Puerto Rico",
+            "currentCases": "788",
+            "deaths": "42"
+        },
+        {
+            "state": "Recovered",
+            "currentCases": "0",
+            "deaths": "0",
+            "field8": "37859",
+            "field9": "0"
+        },
+        {
+            "state": "Virgin Islands",
+            "currentCases": "51",
+            "deaths": "1"
+        },
+        {
+            "state": "Alberta",
+            "currentCases": "1567",
+            "deaths": "40"
+        },
+        {
+            "state": "British Columbia",
+            "currentCases": "1445",
+            "deaths": "58"
+        },
+        {
+            "state": "Manitoba",
+            "currentCases": "243",
+            "deaths": "4"
+        },
+        {
+            "state": "New Brunswick",
+            "currentCases": "112",
+            "deaths": "0"
+        },
+        {
+            "state": "Newfoundland and Labrador",
+            "currentCases": "241",
+            "deaths": "3"
+        },
+        {
+            "state": "Northwest Territories",
+            "currentCases": "5",
+            "deaths": "0"
+        },
+        {
+            "state": "Nova Scotia",
+            "currentCases": "428",
+            "deaths": "2"
+        },
+        {
+            "state": "Ontario",
+            "currentCases": "6648",
+            "deaths": "253"
+        },
+        {
+            "state": "Prince Edward Island",
+            "currentCases": "25",
+            "deaths": "0"
+        },
+        {
+            "state": "Quebec",
+            "currentCases": "12292",
+            "deaths": "289"
+        },
+        {
+            "state": "Saskatchewan",
+            "currentCases": "289",
+            "deaths": "4"
+        },
+        {
+            "state": "Yukon",
+            "currentCases": "8",
+            "deaths": "0"
+        },
+        {
+            "state": "Diamond Princess",
+            "currentCases": "49",
+            "deaths": "1"
+        },
+        {
+            "state": "Georgia",
+            "currentCases": "12159",
+            "deaths": "429"
+        }
+    ]
+}
