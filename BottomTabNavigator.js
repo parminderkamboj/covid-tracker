@@ -1,11 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 
-import TabBarIcon from '../components/TabBarIcon';
-import SummaryContainer from '../summary/SummaryContainer';
-import LinksScreen from '../local/LinksScreen';
-import TimelineContainer from '../timelines/TimelineContainer';
-import StateList from '../states/StatesList';
+import TabBarIcon from './components/TabBarIcon';
+import SummaryContainer from './summary/SummaryContainer';
+import LinksScreen from './local/LinksScreen';
+import TimelineContainer from './timelines/TimelineContainer';
+import StateList from './states/StatesList';
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'summary';
 export default function BottomTabNavigator({ navigation, route }) {

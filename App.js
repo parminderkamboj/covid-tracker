@@ -6,24 +6,10 @@ import { Ionicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import BottomTabNavigator from './app/BottomTabNavigator';
-import useLinking from './app/useLinking';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider, connect } from 'react-redux';
-import axios from 'axios';
-import axiosMiddleware from 'redux-axios-middleware';
-
-import rootReducer from './combinereducer';
-const client = axios.create({
-  baseURL: `https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu`,
-  responseType: 'json'
-});
-//https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu/timeseries?iso2=US&onlyCountries=true
-const store = createStore(rootReducer, applyMiddleware(axiosMiddleware(client)),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
-console.log(" after store creation " + JSON.stringify(store.getState()));
-
+import BottomTabNavigator from './BottomTabNavigator';
+import useLinking from './useLinking';
+import { Provider } from 'react-redux';
+import store from './middleware';
 const Stack = createStackNavigator();
 
 export default function App(props) {

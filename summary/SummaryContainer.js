@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 
 import { getSummary } from './summaryReducer';
 import SummaryComponent from './SummaryComponent';
-import { MyHeader } from '../app/Header'
 class SummaryContainer extends React.Component {
 
   // navigator.geolocation.getCurrentPosition(
