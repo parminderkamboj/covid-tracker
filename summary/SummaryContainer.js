@@ -3,7 +3,8 @@ import { View, StyleSheet } from 'react-native';
 import { Header } from 'react-native-elements';
 import { connect } from 'react-redux';
 
-import { getSummary } from './summaryReducer';
+//import { getSummary } from './summaryReducer';
+import { getAll } from '../BingReducer'
 import SummaryComponent from './SummaryComponent';
 class SummaryContainer extends React.Component {
 
@@ -24,10 +25,11 @@ class SummaryContainer extends React.Component {
   //   }
   // }
   componentDidMount() {
-    this.props.getSummary();
+    this.props.getAll();
   }
   render() {
-    const { summary } = this.props;
+    const { totalConfirmed, totalDeaths, totalRecovered, totalConfirmedDelta } = this.props.all;
+    console.log("total confirm " + totalConfirmedDelta);
     return (
       <View style={styles.container}>
         <Header
@@ -35,8 +37,10 @@ class SummaryContainer extends React.Component {
           centerComponent={{ text: 'Corona Virus Tracker', style: { color: '#fff', fontSize: 20 } }}
           rightComponent={{ icon: 'home', color: '#fff' }}
         />
-        {summary &&
-          <SummaryComponent summary={summary}
+        {!this.props.loading &&
+          <SummaryComponent confirmed={totalConfirmed} deaths={totalDeaths}
+            recovered={totalRecovered}
+            newCases={totalConfirmedDelta}
           />}
       </View>
     );
@@ -56,14 +60,16 @@ SummaryContainer.navigationOptions = {
 
 
 const mapStateToProps = state => {
-  let storedSummary = state.summaryReducer.summary;
+  // console.log("state   " + JSON.stringify(state));
+  let all = state.BingReducer.all;
   return {
-    summary: storedSummary
+    all: all,
+    loading: state.loading,
   };
 };
 
 const mapDispatchToProps = {
-  getSummary
+  getAll
 };
 
 const styles = StyleSheet.create({

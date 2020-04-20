@@ -26,6 +26,7 @@ export function getTimeSeries() {
         type: GET_TIMESERIES,
         payload: {
             request: {
+                baseURL: `https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu`,
                 url: `/timeseries?iso2=US&onlyCountries=true`
             }
         }
