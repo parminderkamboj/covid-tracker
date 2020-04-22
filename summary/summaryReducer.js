@@ -27,7 +27,7 @@ export function getSummary() {
         type: GET_SUMMARY,
         payload: {
             request: {
-                url: `/brief`
+                url: ``
             }
 
         }
