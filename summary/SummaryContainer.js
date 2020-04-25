@@ -3,33 +3,14 @@ import { View, StyleSheet } from 'react-native';
 import { Header } from 'react-native-elements';
 import { connect } from 'react-redux';
 
-//import { getSummary } from './summaryReducer';
-import { getAll } from '../BingReducer'
+import { getSummary } from './summaryReducer';
 import SummaryComponent from './SummaryComponent';
 class SummaryContainer extends React.Component {
-
-  // navigator.geolocation.getCurrentPosition(
-  //   position => {
-  //     const location = JSON.stringify(position);
-
-  //     console.log("location " + JSON.stringify(location));
-  //   },
-  //   error => console.log(error.message),
-  //   { enableHighAccuracy: false, timeout: 20000, maximumAge: 1000 }
-
-  // );
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     statistics: {}
-  //   }
-  // }
   componentDidMount() {
-    this.props.getAll();
+    this.props.getSummary();
   }
   render() {
-    const { totalConfirmed, totalDeaths, totalRecovered, totalConfirmedDelta } = this.props.all;
-    console.log("total confirm " + totalConfirmedDelta);
+    const { confirmed = 0, deaths = 0, recovered = 0 } = this.props.summary;
     return (
       <View style={styles.container}>
         <Header
@@ -38,9 +19,9 @@ class SummaryContainer extends React.Component {
           rightComponent={{ icon: 'home', color: '#fff' }}
         />
         {!this.props.loading &&
-          <SummaryComponent confirmed={totalConfirmed} deaths={totalDeaths}
-            recovered={totalRecovered}
-            newCases={totalConfirmedDelta}
+          <SummaryComponent confirmed={confirmed} deaths={deaths}
+            recovered={recovered}
+
           />}
       </View>
     );
@@ -60,16 +41,14 @@ SummaryContainer.navigationOptions = {
 
 
 const mapStateToProps = state => {
-  // console.log("state   " + JSON.stringify(state));
-  let all = state.BingReducer.all;
   return {
-    all: all,
+    summary: state.summaryReducer.summary,
     loading: state.loading,
   };
 };
 
 const mapDispatchToProps = {
-  getAll
+  getSummary
 };
 
 const styles = StyleSheet.create({

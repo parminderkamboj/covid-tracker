@@ -4,7 +4,6 @@ export const GET_ALL_SUCCESS = 'covid-tracker/all/LOAD_SUCCESS';
 export const GET_ALL_FAIL = 'covid-tracker/all/LOAD_FAIL';
 
 export default function BingReducer(state = { all: {} }, action) {
-    // console.log("***** inside reducer " + JSON.stringify(action));
     switch (action.type) {
         case GET_ALL:
             return { ...state, loading: true };
@@ -22,7 +21,6 @@ export default function BingReducer(state = { all: {} }, action) {
 }
 
 export function getAll() {
-    //console.log("inside BingReducer GetAll");
     return {
         type: GET_ALL,
         payload: {
@@ -33,15 +31,4 @@ export function getAll() {
         }
     };
 }
-
-// export function getTimeSeries() {
-//     return {
-//         type: GET_SUMMARY,
-//         payload: {
-//             request: {
-//                 url: '/timeseries?iso2=US&onlyCountries=true'
-//             }
-//         }
-//     };
-// }
 

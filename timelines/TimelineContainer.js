@@ -45,7 +45,6 @@ class TimelineContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-    // console.log("inside timeline container" + JSON.stringify(state));
     let newTimeSeries = state.timelineReducer.timeSeries;
     return {
         timeSeries: newTimeSeries

@@ -1,64 +1,37 @@
 import * as React from 'react';
-import { Platform, StyleSheet, View } from 'react-native';
-import { getAll } from '../BingReducer';
+import { ActivityIndicator, View } from 'react-native';
 import { connect } from 'react-redux';
 import StateListComponent from './StateListComponent';
-import { Text } from 'react-native-elements';
+import { getStatesData } from './statesReducer';
 
-
+//33.4484° N, 112.0740° W for phx 
 class StatelistContainer extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            searchStr: '',
-            orgList: [],
-            list: []
-        }
-        //this.state.orgList = require('./../data/states').stateData;
-    }
-    //orgList = require('./../data/states').default;
-    updateSearch = (search) => {
-        //this.setState(search);
-
-        let newList = this.state.orgList.filter((item) =>
-
-            item.displayName.toLowerCase().indexOf(search.toLowerCase()) != -1
-        )
-        this.setState({
-            searchStr: search,
-            list: newList
-        });
-    }
     componentDidMount() {
-        getAll();
+        this.props.getStatesData();
     }
     render() {
-        let listOfStates = [];
-        if (this.props.all.areas) {
-            listOfStates = this.props.all.areas[0].areas;
+        let comp = <ActivityIndicator size="large" color="#0000ff" />;
+        if (!this.props.loading) {
+            comp = <StateListComponent stateData={this.props.states}
+            />
         }
-
-        //console.log("inside statelins " + JSON.stringify(list));
         return (
 
             <View >
-                <StateListComponent stateData={listOfStates}
-                    searchCallBack={this.updateSearch} searchStr={this.state.searchStr} />
+                {comp}
             </View>
         );
     };
 }
 const mapStateToProps = state => {
-    // console.log("state   " + JSON.stringify(state));
-    let all = state.BingReducer.all;
     return {
-        all: all,
-        loading: state.loading,
+        states: state.statesReducer.states,
+        loading: state.statesReducer.loading,
     };
 };
 
 const mapDispatchToProps = {
-    getAll
+    getStatesData
 };
 
 

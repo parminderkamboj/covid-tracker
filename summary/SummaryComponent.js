@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Platform, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Card, Text } from 'react-native-elements'
+
 export default function SummaryComponent(props) {
     //("inside component " + props.confirmed);
     return (
@@ -14,9 +15,7 @@ export default function SummaryComponent(props) {
             <Card containerStyle={styles.blackCard} title='Recovered' titleStyle={styles.regionText}>
                 <Text h2 style={styles.regionText}>{props.recovered && props.recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Text>
             </Card>
-            <Card containerStyle={styles.blackCard} title='New Cases' titleStyle={styles.regionText}>
-                <Text h2 style={styles.regionText}>{props.newCases && props.newCases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</Text>
-            </Card>
+
         </View>
     );
 }

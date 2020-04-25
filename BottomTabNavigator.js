@@ -7,7 +7,7 @@ import LocalContainer from './local/LocalContainer';
 import TimelineContainer from './timelines/TimelineContainer';
 import StatesListContainer from './states/StatesListContainer';
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'summary';
+const INITIAL_ROUTE_NAME = 'Local';
 export default function BottomTabNavigator({ navigation, route }) {
   // Set the header title on the parent stack navigator depending on the
   // currently active tab. Learn more in the documentation:

@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
+import { ActivityIndicator, View } from 'react-native';
+
 import { Header } from 'react-native-elements';
 import { connect } from 'react-redux';
 import LocalComponent from "./LocalComponent";
-import { getAll } from '../BingReducer';
-import closestLocation from './localutils';
+import { getLocalData } from './localDataReducer';
 
 class LocalContainer extends React.Component {
   constructor(props) {
@@ -14,28 +15,10 @@ class LocalContainer extends React.Component {
     }
   }
   componentDidMount() {
-    this.props.getAll();
-    let newLocation = {}
+    //this.props.getAll();
     navigator.geolocation.getCurrentPosition(
       position => {
-        console.log(position.coords.latitude + ", " + position.coords.longitude);
-
-        let location = {
-          lat: position.coords.latitude,
-          long: position.coords.longitude,
-        }
-        let states = this.props.all.areas[0].areas;
-        let allLocations = [];
-        for (state of states) {
-          for (area of state.areas) {
-            allLocations.push(area)
-          }
-        }
-        let closest = closestLocation(location, allLocations);
-        this.setState({
-          location: closest,
-        });
-
+        this.props.getLocalData(position.coords.latitude, position.coords.longitude);
       },
       error => console.log(error.message),
       { enableHighAccuracy: false, timeout: 20000, maximumAge: 1000 }
@@ -43,7 +26,10 @@ class LocalContainer extends React.Component {
     );
   }
   render() {
-
+    let comp = <ActivityIndicator size="large" color="#0000ff" />;
+    if (!this.props.loading) {
+      comp = <LocalComponent localData={this.props.localData} />
+    }
     return (
       <ScrollView style={{ align: "center" }}>
         <Header
@@ -51,8 +37,7 @@ class LocalContainer extends React.Component {
           centerComponent={{ text: 'Corona Virus Tracker', style: { color: '#fff', fontSize: 20 } }}
           rightComponent={{ icon: 'home', color: '#fff' }}
         />
-        {this.state.location &&
-          <LocalComponent localData={this.state.location} />
+        {comp
         }
       </ScrollView>
     );
@@ -62,16 +47,14 @@ class LocalContainer extends React.Component {
 
 
 const mapStateToProps = state => {
-  // console.log("state   " + JSON.stringify(state));
-  let all = state.BingReducer.all;
   return {
-    all: all,
-    loading: state.loading,
+    localData: state.LocalDataReducer.localData,
+    loading: state.LocalDataReducer.loading,
   };
 };
 
 const mapDispatchToProps = {
-  getAll
+  getLocalData
 };
 
 

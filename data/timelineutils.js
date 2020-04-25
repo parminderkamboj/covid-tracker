@@ -1,23 +1,17 @@
 
 let states = data.areas[0].areas;
-//console.log(states);
 let allLocations = [];
-//let allLocs = states.map(e => ({ id: e.id, areas: e.areas }));
 for (state of states) {
     for (area of state.areas) {
         allLocations.push(area)
     }
-    //allLocations.push(e);
 }
 
-//console.log(allLocations[2]);
 let targetLoc = {
     lat: 33.717102604,
     long: -112.2769465,
 }
 
-console.log("************");
-console.log("closest location" + JSON.stringify(closestLocation(targetLoc, allLocations)));
 function closestLocation(targetLocation, locationData) {
     function vectorDistance(dx, dy) {
         return Math.sqrt(dx * dx + dy * dy);

@@ -4,7 +4,6 @@ export const GET_SUMMARY_SUCCESS = 'covid-tracker/summary/LOAD_SUCCESS';
 export const GET_SUMMARY_FAIL = 'covid-tracker/summary/LOAD_FAIL';
 
 export default function summaryReducer(state = { summary: { "confirmed": 0, "deaths": 0, "recovered": 0 } }, action) {
-    // console.log("***** inside reducer " + JSON.stringify(action));
     switch (action.type) {
         case GET_SUMMARY:
             return { ...state, loading: true };
@@ -22,26 +21,15 @@ export default function summaryReducer(state = { summary: { "confirmed": 0, "dea
 }
 
 export function getSummary() {
-    // console.log("inside reducer getSummary");
     return {
         type: GET_SUMMARY,
         payload: {
             request: {
-                url: ``
+                baseURL: `https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu`,
+                url: `/brief`
             }
 
         }
     };
 }
-
-// export function getTimeSeries() {
-//     return {
-//         type: GET_SUMMARY,
-//         payload: {
-//             request: {
-//                 url: '/timeseries?iso2=US&onlyCountries=true'
-//             }
-//         }
-//     };
-// }
 

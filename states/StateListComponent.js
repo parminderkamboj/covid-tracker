@@ -3,20 +3,16 @@ import { View } from 'react-native';
 import { Header, ListItem, SearchBar, Text } from 'react-native-elements';
 import { ScrollView } from 'react-native';
 export default class StateListComponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            searchStr: '',
-            orgList: this.props.stateData,
-            list: this.props.stateData,
-        }
+    state = {
+        searchStr: '',
+        orgList: this.props.stateData,
+        list: this.props.stateData,
     }
-    updateSearch = (search) => {
-        //this.setState(search);
 
+    updateSearch = (search) => {
         let newList = this.state.orgList.filter((item) =>
 
-            item.displayName.toLowerCase().indexOf(search.toLowerCase()) != -1
+            (item != null) && (item.state.toLowerCase().indexOf(search.toLowerCase()) != -1)
         )
         this.setState({
             searchStr: search,
@@ -24,31 +20,19 @@ export default class StateListComponent extends React.Component {
         });
     }
     render() {
-
-        // let searchText = props.searchText;
-        // if (searchText && searchText != "") {
-        //     stateData = statesData.filter(state => state.displayName.includes(searchText))
-        // }
-        let listItems = [];
-        if (this.state.list) {
-            listItems = this.state.list.map((item, i) => (
-                <ListItem
-                    key={i}
-                    title={item.displayName}
-
-                    rightElement={
-                        <View>
-                            <Text> {'Cases : ' + item.totalConfirmed}</Text>
-                            <Text style={{ color: 'red' }}>{'Deaths : ' + item.totalDeaths}</Text>
-
-                        </View>
-                    }
-
-                    bottomDivider
-
-                />
-            ))
-        }
+        let listItems = this.state.list.map((item, i) => (
+            <ListItem
+                key={i}
+                title={item.state}
+                rightElement={
+                    <View>
+                        <Text> {'Cases : ' + item.confirmed}</Text>
+                        <Text style={{ color: 'red' }}>{'Deaths : ' + item.deaths}</Text>
+                    </View>
+                }
+                bottomDivider
+            />
+        ))
         return (
             <View >
                 <Header
@@ -64,10 +48,8 @@ export default class StateListComponent extends React.Component {
                 <ScrollView >
                     <View  >
                         {listItems}
-
                     </View>
                 </ScrollView>
-
             </View>
         );
     }

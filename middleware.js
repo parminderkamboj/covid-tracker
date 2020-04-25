@@ -1,11 +1,10 @@
 import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
 import { createStore, applyMiddleware } from 'redux';
-import BingReducer from './BingReducer'
 import rootReducer from './combinereducer';
 const client = axios.create({
     // baseURL: `https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu`,
-    baseURL: `https://bing.com/covid/data`,
+    baseURL: `http://localhost:3000`,
     responseType: 'json'
 });
 //https://wuhan-coronavirus-api.laeyoung.endpoint.ainize.ai/jhu-edu/timeseries?iso2=US&onlyCountries=true

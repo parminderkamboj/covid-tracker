@@ -1,11 +1,13 @@
 import { combineReducers } from "redux";
 import summaryReducer from './summary/summaryReducer';
-import BingReducer from './BingReducer'
-import timelineReducer from './timelines/timelineReducer'
+import LocalDataReducer from './local/localDataReducer';
+import timelineReducer from './timelines/timelineReducer';
+import statesReducer from './states/statesReducer';
 export default rootReducer = combineReducers(
     {
-        //  summaryReducer: summaryReducer,
-        BingReducer: BingReducer,
+        summaryReducer: summaryReducer,
+        statesReducer: statesReducer,
+        LocalDataReducer: LocalDataReducer,
         timelineReducer: timelineReducer,
     }
 );

@@ -8,14 +8,8 @@ import {
 } from 'react-native-chart-kit';
 
 export default function TotalDeathsChart(props) {
-    //console.log("in totaldeathcharts " + JSON.stringify(props));
     let dates = props.dates;
     let cases = props.cases;
-    if (props.dailyCases) {
-        //dates = props.dailyCases.map((obj) => obj.date);
-        //cases = props.dailyCases.map((obj) => obj.case);
-    }
-    //console.log("in totaldeathcharts " + JSON.stringify(dates + "    " + cases));
 
     return (
         <View style={{
